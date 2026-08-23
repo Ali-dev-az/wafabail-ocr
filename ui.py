@@ -41,17 +41,18 @@ st.markdown(
     }
 
     [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #102a43 0%, #173f5f 100%);
+        background: linear-gradient(180deg, #ffbe0b 0%, #fb5607 100%);
     }
 
     [data-testid="stSidebar"] * {
-        color: white !important;
+        color: black !important;
     }
 
     .brand {
         padding: 18px 20px;
         border-radius: 16px;
-        background: linear-gradient(135deg, #0b1f33, #176b87);
+        background: linear-gradient(135deg, #fb5607, #ffbe0b);
+        
         color: white;
         margin-bottom: 20px;
         box-shadow: 0 8px 25px rgba(16, 42, 67, .18);
@@ -72,7 +73,7 @@ st.markdown(
     .hero {
         padding: 28px 30px;
         border-radius: 20px;
-        background: linear-gradient(135deg, #ffffff 0%, #edf5fa 100%);
+        background: linear-gradient(135deg, #ffc300 0%, #edf5fa 100%);
         border: 1px solid #dbe5ed;
         box-shadow: 0 8px 30px rgba(16, 42, 67, .07);
         margin-bottom: 22px;
@@ -231,8 +232,7 @@ with st.sidebar:
 st.markdown(
     """
     <div class="hero">
-        <h1>📄 WAFABAIL Document Intelligence</h1>
-        <p>Classification automatique, OCR et extraction intelligente des documents.</p>
+        <h1> WAFABAIL Document Intelligence</h1>
     </div>
     """,
     unsafe_allow_html=True,
