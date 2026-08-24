@@ -49,29 +49,57 @@ st.markdown(
         color: black !important;
     }
 
-    .brand {
-        padding: 14px 16px;
-        border-radius: 16px;
-        background: linear-gradient(135deg, #fb5607, #ffbe0b);
-        color: white;
-        margin-bottom: 20px;
-        box-shadow: 0 8px 25px rgba(16, 42, 67, .18);
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        min-height: 72px;
-    }
+   .brand {
 
-    .brand-logo {
-        width:100px;
-        height:100px;
-        object-fit: contain;
-        flex-shrink: 0;
-        border-radius: 10px;
-        background: white;
-        padding: 5px;
-        box-sizing: border-box;
-    }
+    padding: 14px 16px;
+
+    border-radius: 16px;
+
+    background: linear-gradient(135deg, #fb5607, #ffbe0b);
+
+    color: white;
+
+    margin-bottom: 20px;
+
+    box-shadow: 0 8px 25px rgba(16, 42, 67, .18);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-height: 72px;
+
+    margin-top: -38px;
+
+    width: calc(100% + 25px);
+
+    margin-left: -15px;
+
+    box-sizing: border-box;
+}
+
+   .brand-logo {
+    width: 105px;
+    height: calc(100% + 28px);
+
+    object-fit: contain;
+    flex-shrink: 0;
+
+    background: white;
+    padding: 5px;
+
+    box-sizing: border-box;
+
+    /* Arrondi uniquement à gauche */
+    border-radius: 16px 0 0 16px;
+
+    /* Permet au logo de toucher les bords de la grande box */
+    margin-left: -14.8px;
+    margin-top: -14px;
+    margin-bottom: -14px;
+}
 
     .brand-content {
         display: flex;
