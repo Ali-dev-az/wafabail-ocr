@@ -10,6 +10,7 @@ import copy
 import json
 import tempfile
 from pathlib import Path
+import base64
 
 import streamlit as st
 from PIL import Image
@@ -49,26 +50,48 @@ st.markdown(
     }
 
     .brand {
-        padding: 18px 20px;
+        padding: 14px 16px;
         border-radius: 16px;
         background: linear-gradient(135deg, #fb5607, #ffbe0b);
-        
         color: white;
         margin-bottom: 20px;
         box-shadow: 0 8px 25px rgba(16, 42, 67, .18);
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-height: 72px;
+    }
+
+    .brand-logo {
+        width:100px;
+        height:100px;
+        object-fit: contain;
+        flex-shrink: 0;
+        border-radius: 10px;
+        background: white;
+        padding: 5px;
+        box-sizing: border-box;
+    }
+
+    .brand-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 0;
     }
 
     .brand h1 {
         margin: 0;
-        font-size: 28px;
-        letter-spacing: .5px;
+        font-size: 22px;
+        letter-spacing: .4px;
+        line-height: 1.1;
     }
 
     .brand p {
-        margin: 6px 0 0 0;
-        opacity: .85;
-        font-size: 13px;
-    }
+    margin: -15px 0 0 0;
+    opacity: .85;
+    font-size: 13px;
+}
 
     .hero {
         padding: 28px 30px;
@@ -193,15 +216,31 @@ def clean_result_for_download(result):
 
 
 # =========================================================
+# LOGO WAFABAIL
+# =========================================================
+
+logo_path = Path(__file__).parent / "assets" / "wafabail_logo.png"
+
+if logo_path.exists():
+    with open(logo_path, "rb") as logo_file:
+        logo_base64 = base64.b64encode(logo_file.read()).decode("utf-8")
+else:
+    logo_base64 = ""
+
+
+# =========================================================
 # SIDEBAR
 # =========================================================
 
 with st.sidebar:
     st.markdown(
-        """
+        f"""
         <div class="brand">
-            <h1>WAFABAIL</h1>
-            <p>Intelligent Document Processing</p>
+            <img class="brand-logo" src="data:image/png;base64,{logo_base64}" alt="WAFABAIL Logo">
+            <div class="brand-content">
+                <h1>WAFABAIL</h1>
+                <p>Intelligent Document Processing</p>
+            </div>
         </div>
         """,
         unsafe_allow_html=True,
